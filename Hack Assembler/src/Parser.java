@@ -20,9 +20,18 @@ public class Parser {
 			String line = br.readLine();
 			while (line != null) {
 				//ignore lines that start with //
-				if(!line.startsWith("//")){
-					line=line.trim();
-					lines.add(line);
+				if(line.startsWith("//")){
+					//don't add line if it starts with //
+				}else{
+					if(line.contains("//")){
+						//remove everything in the line after, and including the //
+						int commentLoc = line.indexOf("//");
+						line = line.substring(0, commentLoc);
+						
+					}
+					line = line.trim();
+					if(!line.isEmpty()) lines.add(line);
+					
 				}
 				line = br.readLine();
 			}
