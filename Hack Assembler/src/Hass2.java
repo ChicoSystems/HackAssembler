@@ -14,7 +14,7 @@ public class Hass2 {
 		// TODO Auto-generated constructor stub
 		String fileName;
 		if(args.length == 0){
-			fileName = "Rect.asm";
+			fileName = "Mult.asm";
 		}else{
 			fileName = args[0];
 		}
